@@ -1,10 +1,10 @@
 <template>
   <div class="mobile__digitalclock">
-    <div class="mobile__digitalclock__hour">04</div>
+    <div class="mobile__digitalclock__hour mobile__digitalclock--select">04</div>
     :
-    <div class="mobile__digitalclock__min">08</div>
+    <div class="mobile__digitalclock__min mobile__digitalclock--select">08</div>
     :
-    <div class="mobile__digitalclock__sec">51</div>
+    <div class="mobile__digitalclock__sec mobile__digitalclock--select">51</div>
   </div>
   <div class="mobile__description">
     Select a section from digital clock then change value from analog clock
@@ -22,20 +22,27 @@ export default {};
     padding: 5px;
     font-family: "roboto";
     font-size: 50px;
-    position: relative;
+    // position: fixed;
+   
+    // &__hour,
+    // &__min,
+    // &__sec {
+      position: relative;
+    // }
 
-    &__hour::after + &__hour:active {
-        content: '';
-        background-color: darkblue;
-        width: 33%;
-        height: 3px;
-        position: absolute;
-        left: 0px;
-        bottom: 0px;
-        border-radius: 3px;
+    // &--select {
+    &__hour::after {
+      content: "";
+      background-color: darkblue;
+      width: 33%;
+      height: 3px;
+      position: absolute;
+      left: 0px;
+      bottom: 0px;
+      border-radius: 3px;
     }
 
-    &__min::after + &__min:hover{
+    &__min::after {
         content: '';
         background-color: darkblue;
         width: 33%;
